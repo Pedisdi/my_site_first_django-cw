@@ -6,16 +6,25 @@ from django.http import HttpResponse
 from django.template import loader
 
 
-def home(request):
-    template = loader.get_template('home.html').render()
-    return HttpResponse(template)
+def view_color(request, color_type):
+    template_name = 'color_red.html' if color_type == 'red' else 'color_blue.html'
+    return render(request, template_name)
+    # hello world
 
 
-def about(request):
-    template = loader.get_template('about.html')
-    return HttpResponse(template.render())
+# def home(request):
+#     # print(request.method)
+#     return render(request, 'home.html')
+
+def home(request, color_type='white'):
+    context = {'color_type': color_type, 'link_name': 'home', 'link': '/home'}
+    return render(request, 'home.html', context)
+
+
+def about(request, color_type='white'):
+    context = {'color_type': color_type, 'link_name': 'about', 'link': '/about'}
+    return render(request, 'about.html', context)
 
 
 def contact(request):
-    template = loader.get_template('contact.html').render()
-    return HttpResponse(template)
+    return render(request, 'contact.html')

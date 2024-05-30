@@ -1,8 +1,15 @@
-<!DOCTYPE html>
-<html>
-<body>
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<body>#}
+{##}
+{#<h1>About</h1>#}
+{##}
+{#</body>#}
+{#</html>#}
 
-<h1>About</h1>
+{% extends 'base.html' %}
+{% block link %}
+    <h1>about</h1>
 
-</body>
-</html>
+    <a href={% url 'blog-home-without-color' %}>home</a>
+{% endblock %}

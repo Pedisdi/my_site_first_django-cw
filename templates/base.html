@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: {{ color_type }};
+        }
+    </style>
+</head>
+<body>
+{#<h1>Home</h1>#}
+{#<a href="/about/">About</a>#}
+{#<a href={{ link }}>{{ link_name }}</a>#}
+{% block link %}
+    
+{% endblock %}
+{#{% url 'blog-about' %} #}
+{#{{  }}#}
+
+
+</body>
+</html>

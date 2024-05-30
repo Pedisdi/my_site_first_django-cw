@@ -1,8 +1,24 @@
-<!DOCTYPE html>
-<html>
-<body>
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#    <style>#}
+{#        body {#}
+{#            background-color: {{ color_type }};#}
+{#        }#}
+{#    </style>#}
+{#</head>#}
+{#<body>#}
 
-<h1>Home</h1>
+{#<a href="/about/">About</a>#}
+{% extends 'base.html' %}
+{% block link %}
+    <h1>Home</h1>
 
-</body>
-</html>
+    <a href={% url 'blog-about-without-color' %}>About</a>
+{% endblock %}
+{#{% url 'blog-about' %} #}
+{#{{  }}#}
+
+
+{#</body>#}
+{#</html>#}
