@@ -11,11 +11,25 @@
 {#<h1>Home</h1>#}
 {#<a href="/about/">About</a>#}
 {#<a href={{ link }}>{{ link_name }}</a>#}
-{% block link %}
-    
-{% endblock %}
-{#{% url 'blog-about' %} #}
-{#{{  }}#}
+{% block link %} {% endblock %}
+{# approach1 #}
+<a href={% url 'blog-about-without-color' %}>About</a>
+{#    <a href="/about/red/">About Red</a>#}
+<a href={% url 'blog-about' color_type='red' %}>About red</a>
+<a href={% url 'blog-about' color_type='blue' %}>About blue</a>
+<hr>
+<a href={% url 'blog-home-without-color' %}>Home</a>
+<a href={% url 'blog-home' 'red' %}>Home Red</a>
+<a href={% url 'blog-home' 'blue' %}>Home Blue</a>
+<hr>
+<a href={% url 'blog-contact' %}>contact</a>
+
+
+{# approach2 #}
+{#{% for name, link in links.items %}#}
+{#    <a href={{ link }}> {{ name }}</a>#}
+{#    <br>#}
+{#{% endfor %}#}
 
 
 </body>
